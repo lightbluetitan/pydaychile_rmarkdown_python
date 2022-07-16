@@ -1,0 +1,135 @@
+---
+title: "Diagramas de Barras"
+author: "Renzo Cáceres Rossi"
+date: "2022/05/18"
+subtitle: Bar Charts
+phone: '51917337684'
+email: arenzocaceresrossi@gmail.com
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    code_download: TRUE
+    theme: united
+bibliography: bibliografia.bib
+csl: apa.csl
+link-citations: yes
+---
+
+<!-- Añadir comentarios a nuestro documento RMarkdown - HTML Tags -->
+
+```{r setup,include=FALSE}
+
+library(ggplot2)
+
+library(lattice)
+
+library(vembedr)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Diagramas de Barras - Bar Charts
+
+El diagrama de barras (**Bar Chart**) es un gráfico estadístico que nos permite representar la distribución de frecuencias de variables cualitativas y cuantitativas discretas; nuestro objetivo es pasar del lápiz y papel al uso de los lenguajes de programación R [@Rprogramming] y Python [@python38], para esto usamos como libro de cabezera **El Arte de Programar en R** [@santana2014arte],compartimos la siguiente imagen como referencia.
+
+<!-- RMarkdown permite añadir HTML tags dentro de su sintaxis para el formateo de nuestro documento -->
+
+<center>
+
+![](diagrama_barras_amano.jpg){width=400}
+
+</center>
+
+
+## Data Set - mtcars
+
+**mtcars** es un data set que ya viene precargado al momento de instalar el **lenguaje de programación R** en nuestro sistema, haremos uso de dicho data set para la creación de distintos diagramas de barras, de las 11 variables y 32 observaciones que lo componen nos enfocaremos en las variables **cyl** (cilindro) y **gear** (engranajes) como se muestra a continuación.
+
+```{r mtcars}
+summary(mtcars)
+
+summary(mtcars$cyl)
+
+summary(mtcars$gear)
+
+```
+
+
+## Bar Chart - barplot()
+
+La función  `barplot()` nos permite crear diagramas de barras (**Bar Charts**) en el lenguaje de programación R, utilizaremos la variable cyl (**cilindros**) para crear el gráfico estadístico reespectivo, como se muestra en la siguiente imagen.
+
+```{r barplot,fig.align='center'}
+x <- table(mtcars$cyl)
+
+colores <- c("orange","blue","purple")
+
+barplot(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores)
+
+```
+
+## Bar Chart - ggplot2
+
+**ggplot2** [@ggplot2] es un paquete del lenguaje de programación que nos permite crear gráficos estadísticos de gran calidad, haremos uso de la variable cyl (**cilindros**) para la creación del gráfico estadístico respectivo, como se muestra a continuación.
+
+```{r ggplot2,fig.align='center'}
+ggplot(mtcars,aes(cyl)) + geom_bar(fill=colores) + labs(x="Cillindros",y="Frecuencias",title="Número de Cilindros") + theme_dark()
+```
+
+
+## Bar Chart - Lattice
+
+**Lattice** [@lattice] es un paquete del lenguaje de programación R, que nos permite crear gráficos estadísticos de muy buena calidad, nos enfocaremos en la variable cyl (**cilindros**) para la creación del gráfico estadístico respectivo, como se muestra a continuación.
+
+```{r lattice,fig.align='center'}
+barchart(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores,horizontal=FALSE)
+```
+
+## Bar Charts - Matplotlib
+
+**Matplotlib** [@Hunter:2007] es una librería del lenguaje de programación Python, que nos permite crear gráficos estadísticos de gran calidad, **RMarkdown** nos permite trabajar con otros lenguajes de programación tales como **C++, SQL, Julia**, entre muchos otros; a continuación mostramos un diagrama de barras (**Bar Chart**) creado con Matplotlib.
+
+```{python,results='hide',collapse=TRUE,fig.align="center"}
+import matplotlib.pyplot as plt
+ 
+
+eje_x = ['Python', 'R', 'Node.js', 'PHP']
+ 
+
+eje_y = [50,20,35,47]
+ 
+
+plt.bar(eje_x, eje_y)
+ 
+
+plt.ylabel('Cantidad de usuarios')
+ 
+
+plt.xlabel('Lenguajes de programación')
+ 
+
+plt.title('Usuarios de lenguajes de programación')
+ 
+
+plt.show()
+```
+
+## YouTube - Tutorial
+
+Compartimos el siguiente tutorial tomado de la plataforma **YouTube** que muestra como crear diagramas de barras (**Bar Charts**) haciendo uso de la función `barplot()` y el paquete **ggplot2** del lenguaje de programación R, para añadir el vídeo utilizamos el paquete **vembedr**
+
+```{r video}
+embed_url("https://www.youtube.com/watch?v=EkxRj02iaLk&t=6s") %>% 
+  use_align("center")
+```
+
+## Referencias
+
+
+
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+
+
+
