@@ -1,0 +1,76 @@
+---
+title: "Bar Charts - Python - Matplotlib"
+author: "Renzo Cáceres Rossi"
+date: "2022/07/16"
+subtitle: RStudio - Python - RMarkdown
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    code_download: TRUE
+---
+
+```{python,include=FALSE}
+import matplotlib.pyplot as plt
+
+import numpy as np
+```
+
+# Diagrama Barras - 001
+
+```{python,fig.align='center',results='hide',collapse=TRUE}
+eje_x = ['Python', 'R', 'Node.js', 'PHP']
+ 
+eje_y = [50,20,35,47]
+ 
+plt.bar(eje_x, eje_y)
+ 
+plt.ylabel('Cantidad de usuarios')
+
+plt.xlabel('Lenguajes de programación')
+ 
+plt.title('Usuarios de lenguajes de programación')
+ 
+plt.show()
+
+```
+
+
+# Diagrama Barras - 002
+
+```{python,fig.align='center',results='hide',collapse=TRUE}
+eje_x = ['Prog.', 'Ciencia', 'Mat.', 'Ing.']
+
+eje_y = [76,31,45,57]
+ 
+plt.barh(eje_x, eje_y, color="green")
+
+plt.ylabel('Empleados')
+
+plt.xlabel('Habilidades')
+
+plt.title('Habilidades')
+
+plt.show()
+```
+
+
+# Diagrama Barras - 003
+
+```{python,fig.align='center',results='hide',collapse=TRUE}
+eje_x = ['Python', 'R', 'Node.js', 'PHP']
+ 
+eje_y = [50,20,35,47]
+ 
+plt.bar(eje_x, eje_y)
+ 
+plt.ylabel('Cantidad de usuarios')
+
+plt.xlabel('Lenguajes de programación')
+ 
+plt.title('Usuarios de lenguajes de programación')
+ 
+plt.show()
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

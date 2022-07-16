@@ -1,0 +1,58 @@
+---
+title: "Mapas Interactivos en Python"
+subtitle: "Folium - RMarkdown"
+author: "Renzo Cáceres Rossi"
+date: "2022/07/16"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    code_download: TRUE
+    self_contained: no
+---
+
+```{python,include=FALSE}
+
+```
+
+
+# Mapa Base - OpenStreetMap
+
+```{python,results='hide',collapse=TRUE}
+
+```
+
+
+# Ubicación - Lat - Long
+
+```{python,results='hide',collapse=TRUE}
+
+```
+
+
+# Marcador - Círculo - Logo
+
+```{python,results='hide',collapse=TRUE}
+
+```
+
+
+# Tiles - Menú Tiles
+
+```{python,results='hide',collapse=TRUE}
+
+```
+
+# Popup - Tooltip 
+
+```{python,results='hide',collapse=TRUE}
+
+```
+
+
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+
+
+
+
